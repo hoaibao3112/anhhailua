@@ -36,14 +36,18 @@ export const Footer: FC = () => {
         </div>
         <div className="flex gap-4">
           <Link
-            href="https://facebook.com/"
+            href="https://www.facebook.com/hoaiphonglongbong"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-tertiary hover:text-white transition-all"
             aria-label="Facebook Website"
           >
             <Globe size={20} />
           </Link>
           <Link
-            href="https://zalo.me/"
+            href="https://zalo.me/0373747395"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-tertiary hover:text-white transition-all"
             aria-label="Zalo Chat"
           >

@@ -57,7 +57,7 @@ export const Navbar = () => {
             Liên hệ
           </Link>
           <Link
-            href="tel:0900000000"
+            href="tel:0373747395"
             className="bg-tertiary text-on-tertiary px-6 py-2.5 rounded-full font-label-md hover:scale-105 active:scale-95 transition-all"
           >
             Liên hệ ngay
@@ -106,7 +106,7 @@ export const Navbar = () => {
             Liên hệ
           </Link>
           <Link
-            href="tel:0900000000"
+            href="tel:0373747395"
             className="bg-tertiary text-on-tertiary px-6 py-3 rounded-xl font-label-md hover:brightness-110 text-center transition-all mt-2"
           >
             Liên hệ ngay

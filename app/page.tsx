@@ -54,7 +54,7 @@ export default async function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="https://facebook.com/"
+                href="https://www.facebook.com/hoaiphonglongbong"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#1877F2] text-white px-8 py-4 rounded-xl font-label-md shadow-lg hover:translate-y-[-4px] transition-all cursor-pointer"
@@ -63,7 +63,7 @@ export default async function Home() {
                 Liên hệ Facebook
               </Link>
               <Link
-                href="https://zalo.me/"
+                href="https://zalo.me/0373747395"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-secondary text-on-secondary px-8 py-4 rounded-xl font-label-md shadow-lg hover:translate-y-[-4px] transition-all cursor-pointer"
@@ -419,13 +419,13 @@ export default async function Home() {
               <h3 className="font-headline-md text-headline-md text-white">Bạn cần tư vấn giống gà phù hợp?</h3>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="tel:0900000000"
+                  href="tel:0373747395"
                   className="flex-1 min-w-[200px] bg-white text-tertiary py-4 rounded-xl text-center font-bold hover:bg-tertiary-fixed transition-all cursor-pointer shadow-lg"
                 >
-                  Gọi Ngay: 0900.000.000
+                  Gọi Ngay: 0373.747.395
                 </Link>
                 <Link
-                  href="https://zalo.me/"
+                  href="https://zalo.me/0373747395"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 min-w-[200px] bg-[#0068FF] text-white py-4 rounded-xl text-center font-bold hover:brightness-110 transition-all cursor-pointer shadow-lg"

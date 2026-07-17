@@ -25,7 +25,7 @@ export const FloatingActions: FC = () => {
     <div className="fixed bottom-margin-mobile right-margin-mobile flex flex-col items-end gap-4 z-[100]">
       {/* Facebook Button */}
       <Link
-        href="https://facebook.com/"
+        href="https://www.facebook.com/hoaiphonglongbong"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-[#1877F2] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all relative group"
@@ -39,7 +39,7 @@ export const FloatingActions: FC = () => {
 
       {/* Zalo Button */}
       <Link
-        href="https://zalo.me/"
+        href="https://zalo.me/0373747395"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-[#0068FF] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all relative group"
@@ -53,7 +53,7 @@ export const FloatingActions: FC = () => {
 
       {/* Call Button */}
       <Link
-        href="tel:0900000000"
+        href="tel:0373747395"
         className="w-16 h-16 bg-tertiary text-on-tertiary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-all animate-bounce"
         aria-label="Gọi điện trực tiếp"
       >

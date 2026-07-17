@@ -104,7 +104,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
             <div className="flex flex-col gap-4 mt-4">
               <Link
-                href="https://zalo.me/"
+                href="https://zalo.me/0373747395"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-tertiary text-on-tertiary w-full py-4 rounded-custom font-headline-md text-headline-md flex items-center justify-center gap-3 hover:shadow-lg hover:-translate-y-0.5 active:scale-98 transition-all cursor-pointer shadow-md"
@@ -113,11 +113,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 Liên hệ tư vấn (Zalo)
               </Link>
               <Link
-                href="tel:0900000000"
+                href="tel:0373747395"
                 className="border-2 border-secondary text-secondary w-full py-4 rounded-custom font-headline-md text-headline-md flex items-center justify-center gap-3 hover:bg-secondary/5 transition-all cursor-pointer"
               >
                 <Phone size={20} />
-                Gọi ngay: 0900.000.000
+                Gọi ngay: 0373.747.395
               </Link>
             </div>
 
