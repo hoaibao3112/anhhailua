@@ -38,7 +38,8 @@ export default async function Home() {
             alt="Cinematic countryside courtyard with exotic chickens roaming freely"
             fill
             priority
-            className="object-cover scale-105 animate-[pulse_10s_infinite]"
+            unoptimized
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent" />
         </div>
