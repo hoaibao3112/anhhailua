@@ -45,7 +45,7 @@ export default function LoginPage() {
           </div>
           <h1 className="font-headline-lg text-headline-lg text-on-surface">Đăng Nhập Quản Trị</h1>
           <p className="text-on-surface-variant text-sm mt-1.5 leading-relaxed">
-            Vui lòng nhập tài khoản quản trị viên để truy cập trang quản lý Gà Kiểng Premium.
+            Vui lòng nhập tài khoản quản trị viên để truy cập trang quản lý Gà Kiểng Miền Tây.
           </p>
         </div>
 

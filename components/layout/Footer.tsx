@@ -12,15 +12,15 @@ export const Footer: FC = () => {
             <div className="relative size-8">
               <Image
                 src="/logo.png"
-                alt="Gà Kiểng Premium"
+                alt="Gà Kiểng Miền Tây"
                 fill
                 className="object-contain"
               />
             </div>
-            <span>Gà Kiểng Premium</span>
+            <span>Gà Kiểng Miền Tây</span>
           </div>
           <p className="text-label-sm font-medium">
-            © {new Date().getFullYear()} Gà Kiểng Premium. Đẳng cấp nghệ thuật chăn nuôi Việt Nam.
+            © {new Date().getFullYear()} Gà Kiểng Miền Tây. Đẳng cấp nghệ thuật chăn nuôi Việt Nam.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">

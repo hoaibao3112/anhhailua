@@ -33,13 +33,13 @@ export const Navbar = () => {
           <div className="relative size-10">
             <Image
               src="/logo.png"
-              alt="Gà Kiểng Premium"
+              alt="Gà Kiểng Miền Tây"
               fill
               priority
               className="object-contain"
             />
           </div>
-          <span>Gà Kiểng Premium</span>
+          <span>Gà Kiểng Miền Tây</span>
         </Link>
 
         {/* Desktop Menu */}

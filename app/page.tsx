@@ -169,7 +169,7 @@ export default async function Home() {
               <h2 className="font-display-lg text-display-lg text-on-surface">
                 Tại Sao Nên Chọn
                 <br />
-                <span className="text-tertiary">Gà Kiểng Premium?</span>
+                <span className="text-tertiary">Gà Kiểng Miền Tây?</span>
               </h2>
               <p className="text-on-surface-variant font-body-lg leading-relaxed">
                 Chúng tôi không chỉ bán gà, chúng tôi cung cấp trải nghiệm sở hữu những &quot;tác phẩm nghệ thuật sống&quot; hoàn hảo nhất.

@@ -15,12 +15,12 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Gà Kiểng Premium | Nghệ Thuật Chăn Nuôi Đẳng Cấp",
+  title: "Gà Kiểng Miền Tây | Gakiengmientay",
   description: "Cung cấp các giống gà kiểng khỏe mạnh, thuần chủng. Chúng tôi tự hào mang đến những tác phẩm nghệ thuật sống động cho không gian của bạn.",
-  keywords: ["gà kiểng", "gà cảnh", "gà kiểng đẹp", "gà serama", "gà silkie", "gà onagadori", "gà phoenix", "gà ba lan", "gà tân châu"],
-  authors: [{ name: "Gà Kiểng Premium" }],
+  keywords: ["gà kiểng miền tây", "gakiengmientay", "gà kiểng", "gà cảnh", "gà kiểng đẹp", "gà serama", "gà silkie", "gà onagadori", "gà phoenix", "gà ba lan", "gà tân châu"],
+  authors: [{ name: "Gà Kiểng Miền Tây" }],
   openGraph: {
-    title: "Gà Kiểng Premium | Nghệ Thuật Chăn Nuôi Đẳng Cấp",
+    title: "Gà Kiểng Miền Tây | Gakiengmientay",
     description: "Cung cấp các giống gà kiểng khỏe mạnh, thuần chủng. Chúng tôi tự hào mang đến những tác phẩm nghệ thuật sống động cho không gian của bạn.",
     type: "website",
     locale: "vi_VN",

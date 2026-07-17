@@ -60,7 +60,7 @@ export function InfoTabs({ specs, careInstructions, longDescription }: InfoTabsP
               </div>
               <div>
                 <p>
-                  Tất cả các dòng gà kiểng tại Gà Kiểng Premium đều trải qua quy trình tuyển chọn giống nghiêm ngặt, đảm bảo các tiêu chuẩn cao nhất về hình thể, sức khỏe và tính khí thân thiện, thích nghi tốt với môi trường sống gia đình hoặc biệt thự sân vườn.
+                  Tất cả các dòng gà kiểng tại Gà Kiểng Miền Tây đều trải qua quy trình tuyển chọn giống nghiêm ngặt, đảm bảo các tiêu chuẩn cao nhất về hình thể, sức khỏe và tính khí thân thiện, thích nghi tốt với môi trường sống gia đình hoặc biệt thự sân vườn.
                 </p>
               </div>
             </div>
