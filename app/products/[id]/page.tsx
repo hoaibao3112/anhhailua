@@ -17,7 +17,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingActions } from '@/components/shared/FloatingActions';
 import { InfoTabs } from '@/components/features/chickens/InfoTabs';
-import { chickensDetailData } from '@/lib/data';
+import { getChickenById, getChickens } from '@/app/actions/chicken';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -25,14 +25,15 @@ interface PageProps {
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const product = chickensDetailData[id];
+  const product = await getChickenById(id);
 
   if (!product) {
     notFound();
   }
 
   // Get related products (exclude current product, limit to 3 items)
-  const relatedProducts = Object.values(chickensDetailData)
+  const allChickens = await getChickens();
+  const relatedProducts = allChickens
     .filter((item) => item.id !== id)
     .slice(0, 3);
 
@@ -147,8 +148,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
         {/* Detailed Info Tabs */}
         <section className="mt-24">
           <InfoTabs
-            specs={product.specs}
-            careInstructions={product.careInstructions}
+            specs={{
+              age: product.age,
+              weight: product.weight,
+              vaccine: product.vaccine,
+            }}
+            careInstructions={{
+              nutrition: product.nutrition,
+              hygiene: product.hygiene,
+            }}
             longDescription={product.longDescription}
           />
         </section>

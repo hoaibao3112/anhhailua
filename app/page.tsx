@@ -21,8 +21,10 @@ import { ChickenList } from '@/components/features/chickens/ChickenList';
 import { ScrollReveal } from '@/components/features/chickens/ScrollReveal';
 import { FaqAccordion } from '@/components/features/chickens/FaqAccordion';
 import { FloatingActions } from '@/components/shared/FloatingActions';
+import { getChickens } from '@/app/actions/chicken';
 
-export default function Home() {
+export default async function Home() {
+  const chickens = await getChickens();
   return (
     <div className="flex flex-col min-h-screen">
       {/* Top Navigation */}
@@ -155,7 +157,7 @@ export default function Home() {
               </Link>
             </ScrollReveal>
           </div>
-          <ChickenList />
+          <ChickenList chickens={chickens} />
         </div>
       </section>
 

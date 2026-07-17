@@ -1,0 +1,30 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Chicken {
+  id              String   @id @default(cuid())
+  name            String
+  subTitle        String
+  price           String
+  status          String
+  description     String
+  longDescription String
+  imageUrl        String   @db.Text
+  tag             String?
+  badges          String[]
+  age             String
+  weight          String
+  vaccine         String
+  nutrition       String
+  hygiene         String
+  gallery         String[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
