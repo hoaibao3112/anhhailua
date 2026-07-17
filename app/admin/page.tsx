@@ -426,35 +426,27 @@ export default function AdminPage() {
               <p className="text-sm">Click &quot;Thêm gà kiểng mới&quot; ở trên để bắt đầu thêm dữ liệu.</p>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="bg-surface-container border-b border-outline-variant/30 text-xs font-bold text-on-surface-variant uppercase tracking-wider">
-                    <th className="py-4 px-6">Ảnh</th>
-                    <th className="py-4 px-6">Tên giống gà</th>
-                    <th className="py-4 px-6">Trạng thái</th>
-                    <th className="py-4 px-6">Giá cả</th>
-                    <th className="py-4 px-6">Đặc điểm tuổi/nặng</th>
-                    <th className="py-4 px-6 text-right">Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-outline-variant/20">
-                  {chickens.map((chicken) => (
-                    <tr key={chicken.id} className="hover:bg-surface-container-lowest transition-colors text-sm">
-                      <td className="py-4 px-6">
-                        <div className="size-16 relative rounded-lg overflow-hidden bg-surface-container border border-outline-variant/10 shadow-sm">
-                          <Image src={chicken.imageUrl} alt={chicken.name} fill className="object-cover" />
-                        </div>
-                      </td>
-                      <td className="py-4 px-6 font-bold text-on-surface">
-                        <div className="flex flex-col">
-                          <span>{chicken.name}</span>
-                          <span className="text-xs text-on-surface-variant font-normal">{chicken.subTitle}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-6">
+            <div>
+              {/* Mobile Card List */}
+              <div className="block md:hidden divide-y divide-outline-variant/10">
+                {chickens.map((chicken) => (
+                  <div key={chicken.id} className="p-4 flex gap-4 items-start">
+                    <div className="size-20 relative rounded-lg overflow-hidden bg-surface-container border border-outline-variant/10 flex-shrink-0 shadow-sm">
+                      <Image src={chicken.imageUrl} alt={chicken.name} fill className="object-cover" />
+                    </div>
+                    <div className="flex-1 flex flex-col gap-1 min-w-0">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="font-bold text-on-surface truncate">{chicken.name}</span>
+                        <span className="text-tertiary font-bold text-sm flex-shrink-0">{chicken.price}</span>
+                      </div>
+                      <span className="text-xs text-on-surface-variant truncate">{chicken.subTitle}</span>
+                      <div className="text-2xs text-on-surface-variant flex gap-3 mt-0.5 font-medium">
+                        <span>Tuổi: {chicken.age}</span>
+                        <span>Cân nặng: {chicken.weight}</span>
+                      </div>
+                      <div className="flex justify-between items-center mt-3 pt-2 border-t border-outline-variant/5">
                         <span
-                          className={`px-3 py-1 rounded-full text-xs font-semibold border ${
+                          className={`px-2 py-0.5 rounded-full text-2xs font-semibold border ${
                             chicken.status === 'Còn hàng'
                               ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
                               : 'bg-rose-50 border-rose-200 text-rose-700'
@@ -462,36 +454,96 @@ export default function AdminPage() {
                         >
                           {chicken.status}
                         </span>
-                      </td>
-                      <td className="py-4 px-6 font-semibold text-tertiary">{chicken.price}</td>
-                      <td className="py-4 px-6 text-on-surface-variant text-xs">
-                        <div className="flex flex-col gap-0.5">
-                          <span>Tuổi: {chicken.age}</span>
-                          <span>Nặng: {chicken.weight}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-6 text-right">
-                        <div className="flex items-center justify-end gap-3">
+                        <div className="flex gap-2">
                           <Link
                             href={`/products/${chicken.id}`}
                             className="p-2 hover:bg-surface-container text-secondary rounded-lg transition-colors inline-block"
-                            title="Xem chi tiết trên Web"
+                            title="Xem chi tiết"
                           >
-                            <ExternalLink size={18} />
+                            <ExternalLink size={16} />
                           </Link>
                           <button
                             onClick={() => handleDelete(chicken.id)}
-                            className="p-2 hover:bg-rose-50 text-rose-600 hover:text-rose-800 rounded-lg transition-colors cursor-pointer"
+                            className="p-2 hover:bg-rose-50 text-rose-600 rounded-lg transition-colors cursor-pointer"
                             title="Xóa gà kiểng"
                           >
-                            <Trash2 size={18} />
+                            <Trash2 size={16} />
                           </button>
                         </div>
-                      </td>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Table List */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-surface-container border-b border-outline-variant/30 text-xs font-bold text-on-surface-variant uppercase tracking-wider">
+                      <th className="py-4 px-6">Ảnh</th>
+                      <th className="py-4 px-6">Tên giống gà</th>
+                      <th className="py-4 px-6">Trạng thái</th>
+                      <th className="py-4 px-6">Giá cả</th>
+                      <th className="py-4 px-6">Đặc điểm tuổi/nặng</th>
+                      <th className="py-4 px-6 text-right">Thao tác</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-outline-variant/20">
+                    {chickens.map((chicken) => (
+                      <tr key={chicken.id} className="hover:bg-surface-container-lowest transition-colors text-sm">
+                        <td className="py-4 px-6">
+                          <div className="size-16 relative rounded-lg overflow-hidden bg-surface-container border border-outline-variant/10 shadow-sm">
+                            <Image src={chicken.imageUrl} alt={chicken.name} fill className="object-cover" />
+                          </div>
+                        </td>
+                        <td className="py-4 px-6 font-bold text-on-surface">
+                          <div className="flex flex-col">
+                            <span>{chicken.name}</span>
+                            <span className="text-xs text-on-surface-variant font-normal">{chicken.subTitle}</span>
+                          </div>
+                        </td>
+                        <td className="py-4 px-6">
+                          <span
+                            className={`px-3 py-1 rounded-full text-xs font-semibold border ${
+                              chicken.status === 'Còn hàng'
+                                ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
+                                : 'bg-rose-50 border-rose-200 text-rose-700'
+                            }`}
+                          >
+                            {chicken.status}
+                          </span>
+                        </td>
+                        <td className="py-4 px-6 font-semibold text-tertiary">{chicken.price}</td>
+                        <td className="py-4 px-6 text-on-surface-variant text-xs">
+                          <div className="flex flex-col gap-0.5">
+                            <span>Tuổi: {chicken.age}</span>
+                            <span>Nặng: {chicken.weight}</span>
+                          </div>
+                        </td>
+                        <td className="py-4 px-6 text-right">
+                          <div className="flex items-center justify-end gap-3">
+                            <Link
+                              href={`/products/${chicken.id}`}
+                              className="p-2 hover:bg-surface-container text-secondary rounded-lg transition-colors inline-block"
+                              title="Xem chi tiết trên Web"
+                            >
+                              <ExternalLink size={18} />
+                            </Link>
+                            <button
+                              onClick={() => handleDelete(chicken.id)}
+                              className="p-2 hover:bg-rose-50 text-rose-600 hover:text-rose-800 rounded-lg transition-colors cursor-pointer"
+                              title="Xóa gà kiểng"
+                            >
+                              <Trash2 size={18} />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>

@@ -22,10 +22,10 @@ export function InfoTabs({ specs, careInstructions, longDescription }: InfoTabsP
   return (
     <div className="bg-white rounded-custom ambient-shadow overflow-hidden border border-outline-variant/20">
       {/* Tabs Headers */}
-      <div className="flex border-b border-outline-variant/20 overflow-x-auto scrollbar-none">
+      <div className="flex border-b border-outline-variant/20 overflow-x-auto scrollbar-none w-full">
         <button
           onClick={() => setActiveTab('dac-diem')}
-          className={`py-6 px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex-1 text-center py-4 px-3 sm:py-6 sm:px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
             activeTab === 'dac-diem' ? 'text-tertiary border-b-2 border-tertiary' : 'text-on-surface-variant hover:text-tertiary'
           }`}
         >
@@ -33,7 +33,7 @@ export function InfoTabs({ specs, careInstructions, longDescription }: InfoTabsP
         </button>
         <button
           onClick={() => setActiveTab('thong-so')}
-          className={`py-6 px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex-1 text-center py-4 px-3 sm:py-6 sm:px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
             activeTab === 'thong-so' ? 'text-tertiary border-b-2 border-tertiary' : 'text-on-surface-variant hover:text-tertiary'
           }`}
         >
@@ -41,16 +41,16 @@ export function InfoTabs({ specs, careInstructions, longDescription }: InfoTabsP
         </button>
         <button
           onClick={() => setActiveTab('cham-soc')}
-          className={`py-6 px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex-1 text-center py-4 px-3 sm:py-6 sm:px-8 font-label-md text-label-md font-semibold transition-all cursor-pointer whitespace-nowrap ${
             activeTab === 'cham-soc' ? 'text-tertiary border-b-2 border-tertiary' : 'text-on-surface-variant hover:text-tertiary'
           }`}
         >
-          Hướng dẫn chăm sóc
+          Chăm sóc
         </button>
       </div>
 
       {/* Tabs Content */}
-      <div className="p-12">
+      <div className="p-6 sm:p-12">
         {activeTab === 'dac-diem' && (
           <div className="tab-content animate-in fade-in duration-300">
             <h3 className="font-headline-md text-headline-md mb-6 text-on-surface">Phong thái đặc trưng</h3>
