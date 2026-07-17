@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { type FC } from 'react';
 import type { ChickenBreed } from '@/types/models.types';
 import { ScrollReveal } from './ScrollReveal';
@@ -8,7 +9,7 @@ interface ChickenCardProps {
 }
 
 export const ChickenCard: FC<ChickenCardProps> = ({ chicken }) => {
-  const { name, price, description, imageUrl, tag, delayMs } = chicken;
+  const { id, name, price, description, imageUrl, tag, delayMs } = chicken;
 
   return (
     <ScrollReveal delayMs={delayMs}>
@@ -43,9 +44,12 @@ export const ChickenCard: FC<ChickenCardProps> = ({ chicken }) => {
               {description}
             </p>
           </div>
-          <button className="w-full py-3 bg-surface-container rounded-xl font-label-md text-on-surface font-semibold hover:bg-tertiary hover:text-on-tertiary active:scale-95 transition-all cursor-pointer">
-            Liên hệ ngay
-          </button>
+          <Link
+            href={`/products/${id}`}
+            className="w-full py-3 bg-surface-container rounded-xl font-label-md text-on-surface font-semibold hover:bg-tertiary hover:text-on-tertiary active:scale-95 transition-all cursor-pointer text-center block"
+          >
+            Xem chi tiết
+          </Link>
         </div>
       </div>
     </ScrollReveal>
