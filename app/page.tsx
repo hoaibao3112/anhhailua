@@ -34,7 +34,7 @@ export default async function Home() {
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9pGgqdoq-LBCVu4Xa326v3XhZ8runpAIm_Lnl-9T0Fp3_9HKW5J1G82BCntH4rfuBMQQEtyWoRnEtJ_K09leLfLwmCsGCLHqMwLY0UYcB32LiNSd3wSYE0DbZZS6fvKUFvOoaY8L86fV_cuo2F2hwZy6C60NoStiGDVskELcJwgW_7v_WP1_kGPRu4SWGbsCptbJ8qI5zcuAMHtm0u1Z6DAD21Y52MxLnqrvnyuB3QXzCWO1LZ2bSZQ"
+            src="/hero-bg.png"
             alt="Cinematic countryside courtyard with exotic chickens roaming freely"
             fill
             priority
