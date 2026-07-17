@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +29,17 @@ export const Navbar = () => {
       }`}
     >
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center">
-        <Link href="#home" className="font-headline-md text-headline-md font-bold text-tertiary">
-          Gà Kiểng Premium
+        <Link href="/" className="flex items-center gap-3 font-headline-md text-headline-md font-bold text-tertiary">
+          <div className="relative size-10">
+            <Image
+              src="/logo.png"
+              alt="Gà Kiểng Premium"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+          <span>Gà Kiểng Premium</span>
         </Link>
 
         {/* Desktop Menu */}

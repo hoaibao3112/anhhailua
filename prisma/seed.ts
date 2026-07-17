@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
@@ -125,6 +126,20 @@ const chickensData = [
 
 async function main() {
   console.log('Seeding database...');
+
+  // Seed admin user
+  console.log('Seeding admin user...');
+  const adminPassword = await bcrypt.hash('Hoaibao@@123', 10);
+  await prisma.user.upsert({
+    where: { username: 'admin' },
+    update: { password: adminPassword },
+    create: {
+      username: 'admin',
+      password: adminPassword,
+    },
+  });
+
+  // Seed chickens
   for (const item of chickensData) {
     await prisma.chicken.upsert({
       where: { id: item.id },

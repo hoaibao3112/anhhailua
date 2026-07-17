@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Plus, Trash2, Loader2, CheckCircle2, XCircle, Image as ImageIcon, ExternalLink } from 'lucide-react';
+import { Plus, Trash2, Loader2, CheckCircle2, XCircle, Image as ImageIcon, ExternalLink, LogOut } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingActions } from '@/components/shared/FloatingActions';
 import { getChickens, createChicken, deleteChicken } from '@/app/actions/chicken';
+import { logoutAdmin } from '@/app/actions/auth';
 
 export default function AdminPage() {
   const [chickens, setChickens] = useState<any[]>([]);
@@ -42,6 +43,15 @@ export default function AdminPage() {
   useEffect(() => {
     fetchChickens();
   }, []);
+
+  const handleLogout = async () => {
+    if (window.confirm('Bạn có chắc chắn muốn đăng xuất không?')) {
+      const res = await logoutAdmin();
+      if (res.success) {
+        window.location.href = '/admin/login';
+      }
+    }
+  };
 
   const handleImageFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -143,13 +153,22 @@ export default function AdminPage() {
               Thêm mới, sửa đổi hoặc xóa các giống gà hiển thị trên trang khách hàng.
             </p>
           </div>
-          <button
-            onClick={() => setIsOpenForm(!isOpenForm)}
-            className="flex items-center gap-2 bg-tertiary text-on-tertiary px-6 py-3 rounded-xl font-label-md font-bold hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer"
-          >
-            <Plus size={20} />
-            {isOpenForm ? 'Đóng form' : 'Thêm gà kiểng mới'}
-          </button>
+          <div className="flex items-center gap-4 flex-wrap">
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 border-2 border-outline-variant text-on-surface px-6 py-3 rounded-xl font-label-md font-bold hover:bg-surface-container active:scale-95 transition-all cursor-pointer"
+            >
+              <LogOut size={18} />
+              Đăng xuất
+            </button>
+            <button
+              onClick={() => setIsOpenForm(!isOpenForm)}
+              className="flex items-center gap-2 bg-tertiary text-on-tertiary px-6 py-3 rounded-xl font-label-md font-bold hover:scale-105 active:scale-95 transition-all shadow-md cursor-pointer"
+            >
+              <Plus size={20} />
+              {isOpenForm ? 'Đóng form' : 'Thêm gà kiểng mới'}
+            </button>
+          </div>
         </div>
 
         {/* Message Banner */}
